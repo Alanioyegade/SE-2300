@@ -8,8 +8,7 @@ The Smart Currency Converter is a command-line application that allows users to 
 1. Make sure you have **Python 3** installed on your computer.
 2. Open your terminal or command prompt.
 3. Navigate to the folder containing the program files.
-4. Install the required dependency: ```bash
-   pip install requests
+4. Install the required dependency
 
 5. Run the program using currency_converter.py
 
