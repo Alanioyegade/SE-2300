@@ -123,21 +123,21 @@ def main():
         except ValueError:
             print("Please enter a valid numeric amount.")
 
-    # Get source currency or country
+# Get source currency or country
 
     source_input = input("Enter source country or currency code: ")
     source_currency_code = converter.get_currency_code(source_input)
 
-    # Get up to 5 target currencies
+# Get up to 5 target currencies
 
     targets_input = input("Enter target countries/currency codes (up to 5, separated by commas): ")
     target_currency_codes = [item.strip() for item in targets_input.split(",")][:5]
 
-    # Fetch exchange rates from API
+# Fetch exchange rates from API
 
     exchange_rates = converter.fetch_live_rates()
 
-    # Check if API call failed
+# Check if API call failed
 
     if not exchange_rates:
         print("Error retrieving exchange rates. Please try again later.")
@@ -145,7 +145,7 @@ def main():
 
     print("\n--- Conversion Results ---")
 
-    # Loop through each target currency
+# Loop through each target currency
 
     for target in target_currency_codes:
         target_code = converter.get_currency_code(target)
@@ -157,6 +157,7 @@ def main():
         )
 
 # Handle unsupported currency
+        
         if converted_amount is None:
             print(f"Conversion failed for {target_code}. Unsupported currency.")
         else:
@@ -166,6 +167,7 @@ def main():
             converter.add_to_history(result_string)
 
 # Ask user if they want to see history
+    
     show_history_choice = input("\nDo you want to see your conversion history? (yes/no): ").lower()
 
     if show_history_choice.startswith("y"):
